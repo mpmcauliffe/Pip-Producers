@@ -1,0 +1,2 @@
+JWT_SECRET      &C8dfh7e^A^ei(e78aS^wYe^E$)_(37&#*(DOi#a)@&3c8H1d)__37*UiJ&3m37r738ue_012
+MONGO_URI       mongodb+srv://ursamajor:A8pV4LVlRyqgXXxu@cluster0.kng3h.mongodb.net/pip-producers?retryWrites=true&w=majority
