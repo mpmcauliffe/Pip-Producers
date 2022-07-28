@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState, } from 'react'
+import { useNavigate } from 'react-router-dom'
 import AuthContext from '../../context/auth/authContext'
 import { Button, NarrowContainer, } from '../styled-components'
 
@@ -16,13 +17,17 @@ const styles = {
     }
 }
 
-const Register = props => {
-    const authContext = useContext(AuthContext)
-    const { register, error, clearErrors, isAuthenticated, } = authContext
+const Register = () => {
+    const authContext                                           = useContext(AuthContext)
+    const { register, loadUser, error, 
+            clearErrors, isAuthenticated, }                     = authContext
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (isAuthenticated) {
-            props.history.push('/')
+            navigate('/')
+            loadUser()
         }
 
         if (error === 'User already exists.') {
@@ -30,7 +35,7 @@ const Register = props => {
             clearErrors()
         }
     // eslint-disable-next-line
-    }, [error, isAuthenticated, props.history])
+    }, [error, isAuthenticated, navigate])
 
     const [user, setUser] = useState({
         name: '',

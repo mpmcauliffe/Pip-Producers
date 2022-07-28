@@ -31,9 +31,8 @@ const AuthState = props => {
 
     // load user
     const loadUser = async () => {
-        if(localStorage.token) {
-            setAuthToken(localStorage.token)
-        }
+        // console.log('load user');
+        if(localStorage.token) { setAuthToken(localStorage.token) }
 
         try {
             const res = await axios.get('/api/auth')
@@ -59,7 +58,8 @@ const AuthState = props => {
                 payload: res.data
             })
 
-            loadUser()
+            localStorage.setItem('token', res.data.token)
+
         } catch (error) {
             dispatch({
                 type: REGISTER_FAIL,
@@ -70,7 +70,7 @@ const AuthState = props => {
 
     // login user
     const login = async formData => {
-        console.log(formData);
+        // console.log(formData);
         try {
             const res = await axios.post('/api/auth', formData, config) 
             
@@ -79,7 +79,8 @@ const AuthState = props => {
                 payload: res.data
             })
 
-            loadUser()
+            localStorage.setItem('token', res.data.token)
+
         } catch (error) {
             dispatch({
                 type: LOGIN_FAIL,

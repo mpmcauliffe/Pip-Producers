@@ -10,7 +10,7 @@ export const Bar = styled.div`
     width: 100vw; 
     justify-content: ${props => (props.footer ? 'space-between' : 'space-between')};
     padding: 1rem 3rem 1rem 1rem;
-    color: ${props => props.color || '#fafafa'}
+    color: ${props => props.color || '#fafafa'};
     background-color: ${props => props.color || '#393939'};
     border: ${props => props.border || 'none'};
 `

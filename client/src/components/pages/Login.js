@@ -20,13 +20,14 @@ const styles = {
 const Login = props => {
     const authContext = useContext(AuthContext)
 
-    const { login, error, clearErrors, isAuthenticated, } = authContext
+    const { login, loadUser, error, clearErrors, isAuthenticated, } = authContext
 
     const navigate = useNavigate()
 
     useEffect(() => {
         if (isAuthenticated) {
             navigate('/')
+            loadUser()
         }
 
         if (error === 'Invalid credentials') {
