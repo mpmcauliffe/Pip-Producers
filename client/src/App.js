@@ -9,7 +9,7 @@ import setAuthToken from './utils/setAuthToken'
 
 if(localStorage.token) { setAuthToken(localStorage.token) }
 
-function App() {
+function App(props) {
 
 
     return (

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 
 export const Button = styled.button`
+    width: ${props => props.formBtn ? '100%' : 'auto'};
     font-family: 'nimbus-sans';
     font-style:normal;
     font-weight: 400;

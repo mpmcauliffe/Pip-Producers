@@ -15,14 +15,14 @@ router.post('/', authContributor, (req, res) => {
         return res.status(400).json({ msg: 'Error: No file uploaded' })
     }
 
-    //console.log(req.files)
+    // console.log(process.env.NODE_ENV)
     const file = req.files.file
     
-    /* FOR DEVELOPMENT USAGE */
-    // ${__dirname}/../../client/public/uploads/${file.name}
+    const uploadPath = typeof process.env.NODE_ENV === 'undefined' 
+        ? `${__dirname}/../../client/public/uploads/${file.name}` // DEV PATH
+        : `${__dirname}/../../client/build/uploads/${file.name}` // PRODUCTION PATH
 
-    /* FOR PRODUCTION USAGE */
-    file.mv(`${__dirname}/../../client/build/uploads/${file.name}`, err => {
+    file.mv(uploadPath, err => {
         if(err) {
             console.error(err)
             return res.status(500).send(err)

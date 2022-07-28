@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ArticleContext from '../../context/articleContext/articleContext'
 import { FileUpload, BackToTop } from '../react-components'
 import { Button, ButtonSet, FormContainer, } from '../styled-components'
@@ -19,6 +20,8 @@ const Create = props => {
     })
 
     const [buttonActive, setButonActive] = useState(data.isPublished)
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (single !== null) {
@@ -62,6 +65,8 @@ const Create = props => {
             console.log('article save')
             saveArticle(data)
         }
+
+        navigate('/listpage')
     }
 
 

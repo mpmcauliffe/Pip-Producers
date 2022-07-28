@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useContext, } from 'react'
+import { useParams, } from 'react-router-dom'
 import ArticleContext from '../../context/articleContext/articleContext'
 import { CoverImage, FormContainer, MainContainer, } from '../styled-components'
 import { BlogLink, BackToTop, } from '../react-components'
@@ -10,8 +11,12 @@ const Article = props => {
     const articleContext = useContext(ArticleContext)
     const { single, getSingle, getNextArticles, next, } = articleContext
 
+    // const params = useParams()
+    const { articleId } = useParams()
+
     useEffect(() => {
-        getSingle(props.match.params.id)
+        // getSingle(props.match.params.id)
+        getSingle(articleId)
         getNextArticles()
 
         window.scrollTo(0,0)

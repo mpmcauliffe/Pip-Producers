@@ -26,7 +26,7 @@ const Register = () => {
 
     useEffect(() => {
         if (isAuthenticated) {
-            navigate('/')
+            navigate('/listpage')
             loadUser()
         }
 
@@ -110,6 +110,7 @@ const Register = () => {
                     style={styles.inputStyles} />
 
                 <Button 
+                    formBtn
                     onClick={onSubmit}
                     style={styles.button}
 

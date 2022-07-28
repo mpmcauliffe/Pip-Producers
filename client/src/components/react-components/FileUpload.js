@@ -93,6 +93,7 @@ const FileUpload = ({ setImagePath, picture }) => {
             <Progress percentage={uploadPercentage} />
 
             <Button 
+                formBtn
                 onClick={onSubmit}
                 type='submit' 
                 className='btn btn-primary btn-block mt-4' 

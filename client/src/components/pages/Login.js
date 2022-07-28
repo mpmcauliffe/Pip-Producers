@@ -26,7 +26,7 @@ const Login = props => {
 
     useEffect(() => {
         if (isAuthenticated) {
-            navigate('/')
+            navigate('/listpage')
             loadUser()
         }
 
@@ -82,6 +82,7 @@ const Login = props => {
                     style={styles.inputStyles} />
 
                 <Button 
+                    formBtn
                     onClick={onSubmit}
                     style={styles.button}
 

@@ -27,7 +27,7 @@ export const Navbar = props => {
 
     return (
         <Fragment>
-            <Bar>
+            <Bar id='top'>
                 <div style={{ display: 'flex', width: '100%', alignItems: 'center' }}>
                     <Link to='/'>
                         <SmallLogo src={require('../../assets/images/small_crest.png')} /> 
