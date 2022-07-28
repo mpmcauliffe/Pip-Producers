@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import AuthState from './context/auth/AuthState'
+import AdminState from './context/adminContext/AdminState'
+import ArticleState from './context/articleContext/ArticleState'
+import { BrowserRouter as Router, } from 'react-router-dom'
+import { MasterSwitch } from './components/routes'
+import { Footer, Navbar, } from './components/react-components'
+import setAuthToken from './utils/setAuthToken'
+
+
+if(localStorage.token) { setAuthToken(localStorage.token) }
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    return (
+        <Router>
+            <AuthState>
+                <AdminState>
+                    <ArticleState>
+                        <Navbar />
+
+                        <MasterSwitch />
+                        
+                        <Footer />
+                    </ArticleState>
+                </AdminState>           
+            </AuthState>
+        </Router>
+    )
 }
 
-export default App;
+
+export default App
+

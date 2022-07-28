@@ -1,13 +1,183 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+  
+  
+  *, *::before, *::after {
+      box-sizing: border-box;
+  }
+  html {
+      height: 100%;
+      width: 100%;
+      font-size: 62.5%;
+  }
+  body {
+      margin: 0;
+      overflow-x: hidden;
+      padding-bottom: 90vh;
+  }
+  h1 {
+      font-family: nimbus-sans;
+      font-weight: 700;
+      font-size: 4.8rem;
+  }
+  h2 {
+      font-family: nimbus-sans;
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 3.6rem;
+  }
+  h3 {
+      font-size: 2.7rem;
+  }
+  h4 {
+      font-family: nimbus-sans;
+      font-size: 2.1rem;
+      font-weight: 300;
+      margin-bottom: 0;
+  }
+  h5 {
+      font-family: nimbus-sans;
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+  }
+  h6 {
+      font-family: nimbus-sans;
+      font-size: 1.4rem;
+      margin: 2rem 0;
+  }
+  p {
+      font-weight:400;
+      font-size: 2.3rem;
+  }
+  pre {
+      font-family: nimbus-sans;
+      font-size: 2.3rem;
+      font-weight:400;
+      white-space: pre-wrap;
+  }
+  
+  hr {
+      opacity: .3;
+  }
+  
+  input {
+      font-family: nimbus-sans;
+  }
+  input:focus {
+      border-color: #DAA520;
+  }
+  
+  
+  .welcome {
+      font-family: 'nimbus-sans';
+      font-style:normal;
+      font-weight: 400;
+      font-size: 2.1rem;
+      color: #DAA520;
+      margin-right: 2rem;
+  }
+  
+  /* .user-card { 
+      display: flex; 
+      height: 6rem;
+      width: 90rem; 
+      justify-content: space-between;
+      align-items: center;
+      padding: .5rem;
+      color: #fbfbfb;
+      background: #494949;
+      border-bottom: .1rem solid #fbfbfb; 
+  
+  
+  } */
+  
+  .user-select { 
+      height: 3.7rem;
+      width: 14rem;
+      font-size: 2rem;
+      border: .1rem solid #daa520;
+      border-radius: .5rem 
+  }
+  
+  .user-select-container { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      width: 20%; 
+  }
+  
+  .color-code { 
+      height: 2rem; 
+      width: 2rem; 
+      background: #daa520; 
+      border-radius: 50px; 
+  }
+  
+  .small-use {
+      font-size: 2rem;
+  }
+  .small-use:hover {
+      cursor: pointer;
+  }
+  .delete-use {
+      color: #db2121;
+  }
+  .edit-use {
+      color: #daa520;
+  }
+  
+  .form-radio {
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       appearance: none;
+       display: inline-block;
+       position: relative;
+       background-color: #f1f1f1;
+       color: #666;
+       top: 10px;
+       height: 30px;
+       width: 30px;
+       border: 0;
+       border-radius: 50px;
+       cursor: pointer;     
+       margin-right: 7px;
+       outline: none;
+  }
+  .form-radio:checked::before {
+      position: absolute;
+      font: 13px/1 'Open Sans', sans-serif;
+      left: 11px;
+      top: 7px;
+      content: '\02143';
+      transform: rotate(40deg);
+  }
+  .form-radio:hover {
+       background-color: #f7f7f7;
+  }
+  .form-radio:checked {
+       background-color: #f1f1f1;
+  }
+  
+  
+  @media (max-width: 76.9rem) {
+      h2 {
+          font-size: 2.2rem;
+          white-space: pre-wrap;
+      }
+      h3 {
+          font-size: 2rem;
+      }
+      h4 {
+          font-size: 1.8rem;
+      }
+      pre {
+          font-size: 1.8rem;
+      }
+      select {
+          width: 20rem;
+      }
+  }
+  
