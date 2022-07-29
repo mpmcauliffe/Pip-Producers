@@ -1,12 +1,13 @@
 import React, { useContext, } from 'react'
 import ArticleContext from '../../context/articleContext/articleContext'
 import { Link, } from 'react-router-dom'
+// import Loading from '../loading/Loading'
 import { UserContainer, } from '../styled-components'
 
 
 const EditBar = ({ article, user, }) => {
-    const articleContext = useContext(ArticleContext)
-    const { deleteArticle, getSingle, } = articleContext
+    const articleContext                    = useContext(ArticleContext)
+    const { deleteArticle, getSingle, }     = articleContext
 
 
     if (user.role === 'admin' || article.user === user._id) {
@@ -17,13 +18,14 @@ const EditBar = ({ article, user, }) => {
                     onClick={() => getSingle(article._id, user._id)}
                     style={{ textDecoration: 'none', }}
 
-                >   <p className='small-use edit-use'>Edit</p>
+                >   <p className='small-use edit-use'><strong>Edit</strong></p>
                 </Link>
 
-                <p
-                    onClick={() => deleteArticle(article._id)} 
+                <p  
                     className='small-use delete-use'
-                >   Delete
+                    onClick={() => deleteArticle(article._id)}>   
+                    
+                    <strong>Delete</strong>
                 </p>
             </UserContainer>
         )

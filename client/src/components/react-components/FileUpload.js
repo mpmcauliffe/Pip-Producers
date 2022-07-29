@@ -21,17 +21,22 @@ const FileUpload = ({ setImagePath, picture }) => {
             setMessage('Only .png, .jpg, .jpeg, and .svg files are acceptable')
         }
     }
-    //console.log(uploadFile)
-    console.log(picture)
+    // console.log(uploadFile)
+    // console.log(picture)
 
 
     const onSubmit = async e => {
         e.preventDefault()
 
+        if (file === '') {
+            setMessage('Please browse for file before uploading.')
+            return
+        }
+
         const formData = new FormData()
         formData.append('file', file)
 
-        console.log(file)
+        // console.log(file)
 
         try {
             const res = await axios.post('/api/upload', formData, {
@@ -49,7 +54,7 @@ const FileUpload = ({ setImagePath, picture }) => {
 
             setUploadedFile({ fileName, filePath })
             setMessage('File uploaded')
-            console.log(filePath)
+            // console.log(filePath)
 
             if (picture) {
                 picture = ''

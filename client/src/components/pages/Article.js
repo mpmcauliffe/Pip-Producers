@@ -15,8 +15,12 @@ const Article = props => {
     const { articleId } = useParams()
 
     useEffect(() => {
-        // getSingle(props.match.params.id)
-        getSingle(articleId)
+        // console.log(articleId)
+
+        // to prevent multiple calls with articleId of undefined
+        if (typeof articleId !== 'undefined') {
+            getSingle(articleId)
+        }
         getNextArticles()
 
         window.scrollTo(0,0)

@@ -29,6 +29,7 @@ export default function articleReducer (state, action) {
             return {
                 ...state, 
                 single: [action.payload],
+                reload: true,
             }
 
         case DELETE_ARTICLE:

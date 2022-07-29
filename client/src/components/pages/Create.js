@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ArticleContext from '../../context/articleContext/articleContext'
+import Loading from '../loading/Loading'
 import { FileUpload, BackToTop } from '../react-components'
 import { Button, ButtonSet, FormContainer, } from '../styled-components'
 import 'simplebar/dist/simplebar.min.css'
@@ -19,7 +20,8 @@ const Create = props => {
         isPublished: false,
     })
 
-    const [buttonActive, setButonActive] = useState(data.isPublished)
+    const [buttonActive, setButonActive]    = useState(data.isPublished)
+    const [isSaving, setIsSaving]           = useState(false)
 
     const navigate = useNavigate()
 
@@ -40,7 +42,7 @@ const Create = props => {
         }
 
     // eslint-disable-next-line
-    }, [single])
+    }, [single, isSaving])
 
     const onChange = e => setData({ ...data, [e.target.name]: e.target.value })
 
@@ -51,6 +53,15 @@ const Create = props => {
     }
     
     const setImagePath = filePath => setData({ ...data, picture: filePath })
+
+    const mockSaving = () => {
+        setIsSaving(true)
+
+        setTimeout(() => {
+            setIsSaving(false)
+            navigate('/listpage')
+        }, 3000);
+    }
     
 
     const submit = e => {
@@ -65,9 +76,12 @@ const Create = props => {
             console.log('article save')
             saveArticle(data)
         }
+        // getArticles()
 
-        navigate('/listpage')
+        mockSaving()
     }
+
+    if (isSaving) { return <Loading /> }
 
 
     return (

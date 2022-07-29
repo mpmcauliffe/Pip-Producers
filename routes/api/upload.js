@@ -10,7 +10,7 @@ router.use(fileUpload())
 
 router.post('/', authContributor, (req, res) => {
     
-    console.log(__dirname)
+    // console.log(__dirname)
     if(req.file === null) {
         return res.status(400).json({ msg: 'Error: No file uploaded' })
     }

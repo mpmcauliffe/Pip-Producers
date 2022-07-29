@@ -20,22 +20,20 @@ const ArticleState = props => {
         single: null,
         type: null,
         next: [],
+        reload: false,
     }
 
     const [state, dispatch] = useReducer(articleReducer, initialState)
 
     // header data
-    const config = {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    }
+    const config = { headers: { 'Content-Type': 'application/json', }, }
 
     /* GET ARTICLES cRud
         makes axios request to ARTICLES API to retrieve ALL articles 
         DISPATCHES: type - GET_ARTICLES
                     payload - a response array */
     const getArticles = async () => {
+        
         try {
             const res = await axios.get('/api/articles')
 
@@ -45,10 +43,6 @@ const ArticleState = props => {
             })
         } catch (error) {
             console.log(error)
-
-            // setTimeout(() => {
-            //     getArticles()
-            // }, 2000);
         }
     }
 
@@ -63,8 +57,10 @@ const ArticleState = props => {
 
         try {
             if (ids.length === 1) {
+                // GET request READ article
                 res = await axios.get(`/api/articles/${ids[0]}`, config)
             } else {
+                // GET request EDIT article. Second ID is author's user ID
                 res = await axios.get(`/api/articles/${ids[0]}/${ids[1]}`, config)
             }
 
@@ -84,8 +80,8 @@ const ArticleState = props => {
     const saveArticle = async article => {
         try {
             const res = await axios.post('/api/articles', article, config)
-            
-            console.log(res.data)
+
+            getArticles()
 
             dispatch({ 
                 type: SAVE_ARTICLE, 
@@ -106,7 +102,8 @@ const ArticleState = props => {
         try {
             const res = await axios.put(`/api/articles/${id}`, article, config)
 
-            console.log(res.data)
+            // console.log(res.data)
+            getArticles()
             dispatch({ 
                 type: EDIT_ARTICLE, 
                 payload: res.data 
@@ -124,6 +121,7 @@ const ArticleState = props => {
         try {
             const res = await axios.delete(`/api/articles/${id}`)
             
+            getArticles()
             dispatch({ 
                 type: DELETE_ARTICLE, 
                 payload: res.data
@@ -154,6 +152,8 @@ const ArticleState = props => {
                 single: state.single,
                 type: state.type,
                 next: state.next,
+                reload: state.reload,
+
                 getArticles,
                 getSingle,
                 saveArticle,
