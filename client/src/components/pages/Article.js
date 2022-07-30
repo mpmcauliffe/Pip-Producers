@@ -17,7 +17,7 @@ const Article = props => {
     useEffect(() => {
         // console.log(articleId)
 
-        // to prevent multiple calls with articleId of undefined
+        // to prevent multiple calls to API with articleId of undefined
         if (typeof articleId !== 'undefined') {
             getSingle(articleId)
         }

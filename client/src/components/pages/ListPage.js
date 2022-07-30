@@ -7,28 +7,22 @@ import Loading from '../loading/Loading'
 
 
 const ListPage = () => {
-    const authContext = useContext(AuthContext)
-    const { loadUser, user, } = authContext
+    const authContext           = useContext(AuthContext)
+    const { loadUser, user, }   = authContext
 
     const articleContext = useContext(ArticleContext)
-    const { getArticles, type, reload, clearSingle, articles, } = articleContext
+    const { getArticles, reload, type, clearSingle, articles, } = articleContext
 
     useEffect(() => {
         loadUser()
         getArticles()
         clearSingle()
 
-        // if (reload) { filterByType(true) }
-
         window.scrollTo(0,0)
 
     // eslint-disable-next-line
     }, [reload])
 
-    // useEffect(() => {
-        
-    // // eslint-disable-next-line
-    // }, [reload])
 
     if (articles === null || user === null) {
         return <Loading />

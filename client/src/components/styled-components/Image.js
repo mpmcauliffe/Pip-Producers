@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 export const CoverImage = styled.img`
-    max-height: 70rem
+    max-height: 70rem;
     width: 100%;
     margin: .5rem 0 2rem 0;
 `

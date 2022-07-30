@@ -22,18 +22,18 @@ const ArticleState = props => {
         next: [],
         reload: false,
     }
-
+const SET_ERROR = ''
     const [state, dispatch] = useReducer(articleReducer, initialState)
 
     // header data
     const config = { headers: { 'Content-Type': 'application/json', }, }
 
-    /* GET ARTICLES cRud
-        makes axios request to ARTICLES API to retrieve ALL articles 
-        DISPATCHES: type - GET_ARTICLES
-                    payload - a response array */
-    const getArticles = async () => {
-        
+    /* GET ARTICLES 
+        * makes GET request to ARTICLES API to retrieve ALL articles 
+        * @dispatch - to article reducer
+        * @type {string} - GET_ARTICLES
+        * @payload {array} - objects of article data  */
+    const getArticles = async () => {        
         try {
             const res = await axios.get('/api/articles')
 
@@ -42,7 +42,11 @@ const ArticleState = props => {
                 payload: res.data 
             })
         } catch (error) {
-            console.log(error)
+            console.error(error)
+            dispatch({ 
+                type: SET_ERROR, 
+                payload: error 
+            })
         }
     }
 
@@ -121,7 +125,10 @@ const ArticleState = props => {
         try {
             const res = await axios.delete(`/api/articles/${id}`)
             
-            getArticles()
+            setTimeout(() => {
+                getArticles()
+            }, 2000)
+
             dispatch({ 
                 type: DELETE_ARTICLE, 
                 payload: res.data
