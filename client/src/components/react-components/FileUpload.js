@@ -1,10 +1,10 @@
-import React, { Fragment, useState, } from 'react'
+import { Fragment, useState, } from 'react'
 import { Message, Progress, } from '../react-components'
 import { Button, } from '../styled-components'
 import axios from 'axios'
 
 
-const FileUpload = ({ setImagePath, picture }) => {
+export const FileUpload = ({ setImagePath, picture }) => {
 
     const [ file, setFile ] = useState('') 
     const [ fileName, setFileName ] = useState('Choose A Cover Image') 
@@ -122,6 +122,3 @@ const FileUpload = ({ setImagePath, picture }) => {
         </Fragment>
     )
 }
-
-
-export { FileUpload }

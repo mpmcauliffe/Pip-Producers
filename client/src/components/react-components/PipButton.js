@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, } from '../styled-components'
 
 
-const PipButton = () => {
+export const PipButton = () => {
     return (
         <div style={{ textAlign: 'center', marginTop: '3vh' }}>
             <Button pip>
@@ -12,6 +12,3 @@ const PipButton = () => {
         </div>
     )
 }
-
-
-export { PipButton }

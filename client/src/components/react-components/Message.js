@@ -1,7 +1,6 @@
-import React from 'react'
 
 
-const Message = ({ msg, }) => {
+export const Message = ({ msg, }) => {
     return (
         <div 
             className='alert alert-info alert-dismissible fade show' 
@@ -15,6 +14,3 @@ const Message = ({ msg, }) => {
         </div>
     )
 }
-
-
-export { Message }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, } from 'react'
+import { useContext, useEffect, } from 'react'
 import AdminContext from '../../context/adminContext/adminContext'
 import { Button, MainContainer, UserContainer } from '../styled-components'
 import Loading from '../loading/Loading'
@@ -20,7 +20,7 @@ const styles = {
     }
 }
 
-const Users = () => {
+export const Users = () => {
     const adminContext = useContext(AdminContext)
     const { getUsers, updateUsers, users, changeUserRole, changedUsers, } = adminContext
 
@@ -111,11 +111,3 @@ const Users = () => {
         )
     }
 }
-
-
-export { Users }
-
-// <div style={{ display: 'flex', justifyContent: 'space-between', width: '15%', }} >
-// <i className='fa fa-times' aria-hidden='true'></i>
-// style={window.innerWidth < 768 ? styles.smallSelectContainer : {}}
-// style={window.innerWidth < 768 ? styles.smallUserCard : {}}

@@ -1,7 +1,6 @@
-import React from 'react'
 
 
-const Drawer = props => {
+export const Drawer = props => {
     
     return (
         <div 
@@ -19,6 +18,3 @@ const Drawer = props => {
         </div>
     )
 }
-
-
-export { Drawer }

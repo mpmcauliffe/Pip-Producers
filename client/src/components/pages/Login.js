@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, } from 'react'
+import { useContext, useEffect, useState, } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AuthContext from '../../context/auth/authContext'
 import { Button, NarrowContainer, } from '../styled-components'
@@ -17,7 +17,7 @@ const styles = {
     }
 }
 
-const Login = props => {
+export const Login = props => {
     const authContext = useContext(AuthContext)
 
     const { login, loadUser, error, clearErrors, isAuthenticated, } = authContext
@@ -92,6 +92,3 @@ const Login = props => {
         </NarrowContainer>
     )
 }
-
-
-export { Login }

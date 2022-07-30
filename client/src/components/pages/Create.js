@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ArticleContext from '../../context/articleContext/articleContext'
 import Loading from '../loading/Loading'
@@ -7,7 +7,7 @@ import { Button, ButtonSet, FormContainer, } from '../styled-components'
 import 'simplebar/dist/simplebar.min.css'
 
 
-const Create = props => {
+export const Create = props => {
     const articleContext = useContext(ArticleContext)
     const { saveArticle, updateArticle, single } = articleContext
 
@@ -179,7 +179,3 @@ const Create = props => {
         </FormContainer>
     )
 }
-
-
-export { Create }
- 

@@ -1,4 +1,4 @@
-import React, { useContext, } from 'react'
+import { useContext, } from 'react'
 import ArticleContext from '../../context/articleContext/articleContext'
 import { Link, } from 'react-router-dom'
 import { Slide, SlideContainer, Thumbnail, } from '../styled-components'
@@ -6,7 +6,7 @@ import moment from 'moment'
 import { truncate, } from '../../helpers'
 
 
-const BlogLink = ({ article }) => {
+export const BlogLink = ({ article }) => {
     const articleContext = useContext(ArticleContext)
     const { getSingle, } = articleContext
 
@@ -31,6 +31,3 @@ const BlogLink = ({ article }) => {
         </Link>
     )
 }
-
-
-export { BlogLink }

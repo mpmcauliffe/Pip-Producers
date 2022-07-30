@@ -1,4 +1,4 @@
-import React, { useReducer, } from 'react'
+import { useReducer, } from 'react'
 import AdminContext from './adminContext'
 import adminReducer from './adminReducer'
 import axios from 'axios'

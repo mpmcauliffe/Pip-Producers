@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, } from 'react'
+import { Fragment, useContext, useEffect, } from 'react'
 import AuthContext from '../../context/auth/authContext'
 import ArticleContext from '../../context/articleContext/articleContext'
 import { Link, } from 'react-router-dom'
@@ -22,7 +22,7 @@ const style = {
     },
 }
 
-const ButtonAssembly = ({ clearToggle, }) => {
+export const ButtonAssembly = ({ clearToggle, }) => {
     const authContext = useContext(AuthContext)
     const { loadUser, logout, isAuthenticated, user, loading, } = authContext
 
@@ -110,16 +110,3 @@ const ButtonAssembly = ({ clearToggle, }) => {
         return authLinks
     }
 }
-
-
-export { ButtonAssembly }
-
-/*
-return (
-        <Fragment>
-            {!isAuthenticated && !loading ? welcomeLinks : authLinks}
-        </Fragment>
-        
-    )
-
-*/

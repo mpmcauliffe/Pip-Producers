@@ -1,7 +1,7 @@
-import React from 'react'
 
 
-const NotFound = () => {
+
+export const NotFound = () => {
     return (
         <div 
             style={{ width: '67vw', 
@@ -14,6 +14,3 @@ const NotFound = () => {
         </div>
     )
 }
-
-
-export { NotFound }

@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect, useContext, useState, } from 'react'
+import { Fragment, useEffect, useContext, useState, } from 'react'
 import ArticleContext from '../../context/articleContext/articleContext'
 import { ButtonSet, } from '../styled-components'
 
 
-const ArticleTypeToggle = ({ user }) => {
+export const ArticleTypeToggle = ({ user }) => {
     const articleContext = useContext(ArticleContext)
     const { filterByType, } = articleContext
 
@@ -57,6 +57,3 @@ const ArticleTypeToggle = ({ user }) => {
     }
     
 }
-
-
-export { ArticleTypeToggle }

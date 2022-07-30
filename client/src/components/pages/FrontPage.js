@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, } from 'react'
+import { Fragment, useEffect, } from 'react'
 import { MainLogo, } from '../styled-components'
 import { BackToTop, PipButton, Scorebar, } from '../react-components'
 

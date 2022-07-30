@@ -1,7 +1,7 @@
 import React, { Fragment, } from 'react'
 
 
-const ConstructionLinks = props => {
+export const ConstructionLinks = props => {
     return (
         <Fragment></Fragment>
         // <div style={window.innerWidth > 768 ? style.outerRow : style.outerColumn}>
@@ -45,6 +45,3 @@ const ConstructionLinks = props => {
         // </div>
     )
 }
-
-
-export { ConstructionLinks }

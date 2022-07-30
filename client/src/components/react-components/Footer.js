@@ -21,7 +21,7 @@ const style = {
     },
 }
 
-const Footer = () => {
+export const Footer = () => {
  
 
     return (
@@ -53,6 +53,3 @@ const Footer = () => {
         </Bar>
     )
 }
-
-
-export { Footer }

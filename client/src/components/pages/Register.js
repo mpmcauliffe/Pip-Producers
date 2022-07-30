@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, } from 'react'
+import { useContext, useEffect, useState, } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AuthContext from '../../context/auth/authContext'
 import { Button, NarrowContainer, } from '../styled-components'
@@ -17,7 +17,7 @@ const styles = {
     }
 }
 
-const Register = () => {
+export const Register = () => {
     const authContext                                           = useContext(AuthContext)
     const { register, loadUser, error, 
             clearErrors, isAuthenticated, }                     = authContext
@@ -120,6 +120,3 @@ const Register = () => {
         </NarrowContainer>
     )
 }
-
-
-export { Register }

@@ -1,4 +1,4 @@
-import React, { useReducer, } from 'react'
+import { useReducer, } from 'react'
 import ArticleContext from './articleContext'
 import articleReducer from './articleReducer'
 import axios from 'axios'
@@ -125,10 +125,9 @@ const SET_ERROR = ''
         try {
             const res = await axios.delete(`/api/articles/${id}`)
             
-            setTimeout(() => {
-                getArticles()
-            }, 2000)
-
+            // setTimeout(() => { }, 2000)
+            getArticles()
+            
             dispatch({ 
                 type: DELETE_ARTICLE, 
                 payload: res.data
@@ -142,6 +141,7 @@ const SET_ERROR = ''
     const clearSingle = () => dispatch({ type: CLEAR_SINGLE })
 
     // controls types array for published articles and drafts
+    // filter by type is a boolean
     const filterByType = articleStatus => dispatch({ type: FILTER_BY_TYPE, payload: articleStatus, })
 
     // controls next array for article links to appear at bottom of article

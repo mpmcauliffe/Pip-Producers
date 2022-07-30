@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useContext, } from 'react'
+import { Fragment, useEffect, useContext, } from 'react'
 import { useParams, } from 'react-router-dom'
 import ArticleContext from '../../context/articleContext/articleContext'
 import { CoverImage, FormContainer, MainContainer, } from '../styled-components'
@@ -7,7 +7,7 @@ import Loading from '../loading/Loading'
 import moment from 'moment'
 
 
-const Article = props => {
+export const Article = props => {
     const articleContext = useContext(ArticleContext)
     const { single, getSingle, getNextArticles, next, } = articleContext
 
@@ -86,6 +86,3 @@ const Article = props => {
         )
     }
 }
-
-
-export { Article }

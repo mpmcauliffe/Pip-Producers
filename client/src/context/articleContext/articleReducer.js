@@ -13,6 +13,7 @@ import {
 export default function articleReducer (state, action) {
     switch (action.type) {
         case GET_ARTICLES:
+            // console.log(action.payload);
             return {
                 ...state, 
                 articles: action.payload,

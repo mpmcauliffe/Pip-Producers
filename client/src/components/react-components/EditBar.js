@@ -1,13 +1,22 @@
-import React, { useContext, } from 'react'
+import { useContext, } from 'react'
 import ArticleContext from '../../context/articleContext/articleContext'
 import { Link, } from 'react-router-dom'
 // import Loading from '../loading/Loading'
 import { UserContainer, } from '../styled-components'
 
 
-const EditBar = ({ article, user, }) => {
-    const articleContext                    = useContext(ArticleContext)
-    const { deleteArticle, getSingle, }     = articleContext
+export const EditBar = ({ article, user, }) => {
+    const articleContext                                  = useContext(ArticleContext)
+    const { deleteArticle, getSingle, filterByType, }     = articleContext
+
+
+    const handleDeleteClick = () => {
+        deleteArticle(article._id)
+
+        setTimeout(() => {
+            filterByType(article.isPublished)
+        }, 3000)
+    }
 
 
     if (user.role === 'admin' || article.user === user._id) {
@@ -23,7 +32,7 @@ const EditBar = ({ article, user, }) => {
 
                 <p  
                     className='small-use delete-use'
-                    onClick={() => deleteArticle(article._id)}>   
+                    onClick={handleDeleteClick}>   
                     
                     <strong>Delete</strong>
                 </p>
@@ -33,6 +42,3 @@ const EditBar = ({ article, user, }) => {
         return <div style={{ height: '.1rem', background: '#fbfbfb' }} />
     }
 }
-
-
-export { EditBar }

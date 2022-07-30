@@ -1,8 +1,7 @@
-import React from 'react'
 import { Link, animateScroll as scroll } from 'react-scroll'
 
 
-const BackToTop = () => {
+export const BackToTop = () => {
 
     return (
         <Link             
@@ -21,6 +20,3 @@ const BackToTop = () => {
         </Link> 
     )
 }
-
-
-export { BackToTop }
