@@ -17,7 +17,7 @@ export const MasterSwitch = () => {
         <Routes>
             <Route /* PUBLIC */
                 exact
-                path='/'
+                path='/fontpage'
                 element={<FrontPage />} />
 
             <Route /* PUBLIC */
@@ -27,7 +27,7 @@ export const MasterSwitch = () => {
 
             <Route /* PUBLIC */
                 exact 
-                path='/login'
+                path='/'
                 element={<Login />} />
 
             <Route /* PRIVATE */

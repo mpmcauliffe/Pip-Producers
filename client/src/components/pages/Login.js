@@ -38,8 +38,8 @@ export const Login = props => {
     }, [error, isAuthenticated])
 
     const [user, setUser] = useState({
-        email: '',
-        password: '',
+        email: 'maddy@bear.com',
+        password: '123456',
     })
 
     const onChange = e => setUser({ ...user, [e.target.name]: e.target.value })
@@ -56,8 +56,19 @@ export const Login = props => {
     const { email, password, } = user
 
     return (
+        <>
         <NarrowContainer>
-            <form>
+            <p 
+                style={{ marginBottom: '3rem', fontSize: '1.8rem', textAlign: 'center', }}>
+                Login with this dummy admin account or register a new account.</p>
+
+            <a 
+                style={{ display: 'block', marginBottom: '3rem', 
+                    fontSize: '1.8rem', textAlign: 'center', }}
+                href='https://mpmcauliffe.github.io/project-instructions/pages/pip-producers.html'>
+                Click here for more instructions.</a>
+
+            <form>    
                 <label htmlFor='email' style={styles.labelStyles}>Email</label>
                 <input /* EMAIL */
                     onChange={onChange}
@@ -88,7 +99,15 @@ export const Login = props => {
 
                 >   Submit
                 </Button>
+                
             </form>
+
+            
         </NarrowContainer>
+            <div
+                style={{ marginTop: '3rem', width: '100%', }}>
+                
+            </div>
+        </>
     )
 }

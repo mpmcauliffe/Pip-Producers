@@ -73,7 +73,7 @@ export const ButtonAssembly = ({ clearToggle, }) => {
                     }
                     
 
-                    <Link to='/login' onClick={clearToggle}>
+                    <Link to='/' onClick={clearToggle}>
                         <Button onClick={onLogout}>
                             Logout    
                         </Button>
@@ -94,7 +94,7 @@ export const ButtonAssembly = ({ clearToggle, }) => {
                     </Button>
                 </Link>
 
-                <Link to='/login' onClick={clearToggle}>
+                <Link to='/' onClick={clearToggle}>
                     <Button>
                         Login
                     </Button>           
